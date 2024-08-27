@@ -2,14 +2,28 @@
 % Template for STAT 548 Qualifying Paper Report
 % Author: Ben Bloem-Reddy <benbr@stat.ubc.ca>
 % Revised: Daniel J. McDonald <daniel@stat.ubc.ca>
-% Date: 20 August 2022
+% Date: 26 August 2024
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Note: You will get an empty bibliography warning when compiling until you include a citation.
 
 \documentclass[12pt]{article}
-\input{header}
-\input{defs}
+\usepackage[commenters={OA,DJM}]{shortex} % replace OA with your initials
+\usepackage[round]{natbib}
+\usepackage[margin=2.5cm]{geometry}
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+
+% minor adjustments to ShorTeX
+\let\argmin\relax\DeclareMathOperator*{\argmin}{argmin}
+\let\argmax\relax\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\minimize}{minimize}
+\DeclareMathOperator*{\maximize}{maximize}
+\DeclareMathOperator{\subjto}{\ \text{subject to}\ }
+\renewcommand{\top}{\mathsf{T}}
+\renewcommand{\d}{\mathsf{d}}
+
+\graphicspath{{fig/}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +49,7 @@
 \include{sections/project-report}
 
 
-\bibliographystyle{plainnat}
+\bibliographystyle{rss}
 \bibliography{../references/qp.bib}
 
 \end{document}
